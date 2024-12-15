@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FurnitureOS</title>
+    <link rel="icon" href="logo.png">
+    <style>
+    img {
+        position: relative;
+        top: -40px;
+        height: 75px;
+        width: 75px;
+        border-radius: 100px;
+        bottom: 30px;
+        opacity: 0.5;
+    }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins';
+    }
+    .container {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .content {
+        text-align: center;
+        z-index: 1;
+    }
+    .content h1 {
+        font-size: 95px;
+        color: #fff;
+        margin-bottom: 50px;
+    }
+    .vedio
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        z-index: -1;
+
+    }
+    @media(min-aspect-ratio:16/9)
+    {
+        .vedio{
+            width:100%;
+            height:auto;
+        }
+    } 
+    .content a{
+       text-decoration: none;
+        color: #fff;
+        font-size: 25px;
+        border: 2px solid #fff;
+        padding: 15px 25px;
+        border-radius: 50px;
+        transition-duration: 0.6ms;
+
+    }
+    .content a:hover {
+        background-color: #fff;
+        color: #000;
+    }
+    </style>
+</head>
+<body class="background">
+    
+<div class="container">
+    <video autoplay loop muted playsinline class="vedio">
+       <source src="vedio.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+        <img src="logo.png">
+        <h1>FurnitureOS</h1>
+       <a href="menu.html">EXPLORE MENU</a>
+    </div>
+</div>
+
+</body>
+</html>
