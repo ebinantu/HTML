@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function validateForm() {
+        var firstName = document.forms["signupForm"]["firstName"].value;
+        var lastName = document.forms["signupForm"]["lastName"].value;
+        var phoneNumber = document.forms["signupForm"]["phoneNumber"].value;
+        var address = document.forms["signupForm"]["address"].value;
+        var userName = document.forms["signupForm"]["userName"].value;
+        var password = document.forms["signupForm"]["password"].value;
+        var gender = document.forms["signupForm"]["gender"].value;
+        var state = document.forms["signupForm"]["State"].value;
+        var terms = document.forms["signupForm"]["terms"].checked;
+
+        if (firstName == "" || lastName == "" || phoneNumber == "" || address == "" || userName == "" || password == "" || gender == "" || state == "") {
+          alert("All fields must be filled out");
+          return false;
+        }
+
+        if (!terms) {
+          alert("You must agree to the terms and conditions");
+          return false;
+        }
+
+        alert("Account created");
+        return true;
+      }
+    </script>
+    <title>Register</title>
+  </head>
+  <body bgcolor="blue" style="background-image: url('ur.png'); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+    <center><h1 style="color:rgb(7, 2, 49);">User Registration</h1><br><br></center>
+    <form name="signupForm">
+      <center>
+        First Name:
+        <input type="text" name="firstName" maxlength="30" size="35">
+        <br><br>
+        Last Name:
+        <input type="text" name="lastName" maxlength="30" size="35">
+        <br><br>
+        Phone Number:
+        <input type="text" name="phoneNumber" maxlength="30" size="35">
+        <br><br>
+        <label for="address" style="margin-right: 30%;">Address:</label><br>
+        <div><textarea id="address" name="address" rows="4" cols="50" style="margin-left: 5%; margin-top:-14px; resize: none;"></textarea></div><br><br>
+        UserName:
+        <input type="text" name="userName" maxlength="30" size="35">
+        <br><br>
+        Password:
+        <input type="password" name="password" maxlength="30" size="35">
+        <br><br>
+        <div style="margin-right: 110px;">Gender:
+          <input type="radio" id="Male" name="gender" value="Male">
+          <label for="Male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" id="Female" name="gender" value="Female">
+          <label for="Female">Female</label>&nbsp;&nbsp;
+          <input type="radio" id="Other" name="gender" value="Other">
+          <label for="Other">Other</label><br><br>
+        </div>
+
+        <label for="State">State:</label>
+        <select id="State" name="State" style="margin-right: 190px;">
+          <option value="Kerala">Kerala</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Goa">Goa</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Assam">Assam</option>
+        </select><br><br>
+
+        <input type="checkbox" name="terms" required>
+        <label for="terms">I agree to the terms and conditions</label><br><br>
+        <input type="submit" value="Register" onclick="validateForm()"   style="background-color: rgb(143, 142, 142); margin-left: 67%;">
+      </center>
+    </form>
+  </body>
+</html>
