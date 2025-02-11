@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            font-weight: bold;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .Operator {
+            display: flex;
+            flex-direction: row;
+            gap: 3px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            margin-right: 27%;
+        }
+
+    </style>
+    <script>
+        function add() {
+            var num1 = Number(document.calc.num1.value);
+            var num2 = Number(document.calc.num2.value);
+            document.calc.result.value = num1 + num2;
+        }
+
+        function Mul() {
+            var num1 = Number(document.calc.num1.value);
+            var num2 = Number(document.calc.num2.value);
+            document.calc.result.value = num1 * num2;
+        }
+
+        function sub() {
+            var num1 = Number(document.calc.num1.value);
+            var num2 = Number(document.calc.num2.value);
+            document.calc.result.value = num1 - num2;
+        }
+
+        function div() {
+            var num1 = Number(document.calc.num1.value);
+            var num2 = Number(document.calc.num2.value); 
+            if(num2==0)
+            document.calc.result.value = "cannnot be divided by zero"
+            else
+            document.calc.result.value = num1 / num2;
+        }
+    </script>
+    <title>Calculator Page</title>
+</head>
+<body>
+    <h1 class="Calc" align="center" style="color:chocolate; font-family: 'Times New Roman', Times, serif; font-size: 50px;">Calculator</h1>
+    <hr color="black"><hr color="black">
+    <div class="main">
+        <p><u>Enter Two Numbers In Textbox:</u></p>
+        <form name="calc" class="main">
+            <div>
+                Number1: <input type="text" name="num1" value=""><br><br>
+                Number2: <input type="text" name="num2" value="">
+            </div>
+            <div class="Operator">
+                Operations:
+                <input type="button" value="+" onclick="add()">
+                <input type="button" value="x" onclick="Mul()">
+                <input type="button" value="-" onclick="sub()">
+                <input type="button" value="/" onclick="div()">
+            </div><br>
+            <div style="margin-right: 16px;" class ="result" >
+                Result: <input type="text" name="result" value="">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

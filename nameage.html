@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Validation</title>
+    <script>
+        function check(){
+        var n,a;
+        n=document.myform.name.value;
+        if(n=="")
+        alert("please enter a name");
+        else if(n.length<5)
+        alert("name must contain alteast 5 characters");
+        a=Number(document.myform.age.value);
+        if(a=="")
+        alert("please enter age");
+        else if(a<18)
+        alert("age must be above 18");
+        else if(isNaN(a))
+        alert("age must be a number");
+        }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 style="color:red; text-align: center;">NAME AGE Validation</h1>
+    </header>
+    <hr>
+    <hr>
+    <div class="vali">
+      <form name="myform" style="color:rgb(43, 22, 228);">
+        <br><br><br><br>
+        <center>
+          Name:
+          <input type="text" size="20" name="name" value="" maxlength="16"><br><br>
+          Age:
+          <input type="text" size="20" name="age" value=""  maxlength="16">
+          <br><br><br><br>
+          <button class="login" onclick="check()">Validate</button>
+        </center>
+      </form>
+    </div>
+  </body>
+</html>

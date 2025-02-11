@@ -17,21 +17,40 @@
           alert("All fields must be filled out");
           return false;
         }
-
+   
         if (!terms) {
           alert("You must agree to the terms and conditions");
           return false;
         }
-
         alert("Account created");
         return true;
       }
+      function check(){
+        var firstName = document.forms["signupForm"]["firstName"].value;
+        if(firstName=="")
+        alert("please enter a name");
+        else if(firstName.length<2)
+        alert("name must contain alteast 5 characters");
+        var phoneNumber = document.forms["signupForm"]["phoneNumber"].value;
+        if(phoneNumber=="")
+        alert("please enter phone number");
+        else if(phoneNumber.length<10)
+        alert("Enter a valid PhoNumber");
+        else if(isNaN(phoneNumber))
+        alert("must be a number");
+      const userName=document.forms["signupForm"]["userName"].value;
+      const format=/^[a-zA-Z\s'-]+$/;
+      if(format.test(userName))
+      {
+           alert("Enter a valid Username");
+      }
+    }
     </script>
     <title>Register</title>
   </head>
   <body bgcolor="blue" style="background-image: url('ur.png'); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
     <center><h1 style="color:rgb(7, 2, 49);">User Registration</h1><br><br></center>
-    <form name="signupForm">
+      <form name="signupForm">
       <center>
         First Name:
         <input type="text" name="firstName" maxlength="30" size="35">
@@ -42,8 +61,8 @@
         Phone Number:
         <input type="text" name="phoneNumber" maxlength="30" size="35">
         <br><br>
-        <label for="address" style="margin-right: 30%;">Address:</label><br>
-        <div><textarea id="address" name="address" rows="4" cols="50" style="margin-left: 5%; margin-top:-14px; resize: none;"></textarea></div><br><br>
+        <label for="address" style="margin-right: 24%;">Address:</label><br>
+        <div><textarea id="address" name="address" rows="4" cols="50" style="margin-left: 11%; margin-top:-14px; resize: none;"></textarea></div><br><br>
         UserName:
         <input type="text" name="userName" maxlength="30" size="35">
         <br><br>
@@ -73,6 +92,6 @@
         <label for="terms">I agree to the terms and conditions</label><br><br>
         <input type="submit" value="Register" onclick="validateForm()"   style="background-color: rgb(143, 142, 142); margin-left: 67%;">
       </center>
-    </form>
+    </form></div> 
   </body>
 </html>

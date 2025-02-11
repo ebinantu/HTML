@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function prime() {
+            var number = Number(document.myForm.Number.value);
+            if (number <= 1) {
+                document.myForm.result.value = "NOT PRIME";
+                return;
+            }
+            for (var i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    document.myForm.result.value = "NOT PRIME";
+                    return;
+                }
+            }
+            document.myForm.result.value = "PRIME";
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculate Sum of Numbers Up to Limit</h1>
+    <form name="myForm">
+        <label for="Number">Enter a number: </label>
+        <input type="number" name="Number">
+
+        <br><br>
+
+        <label for="result">The NUMBER IS: </label>
+        <input type="text" name="result">
+
+        <br><br>
+        <button type="button" onclick="prime()">CHECK</button>
+    </form>
+</body>
+</html>
