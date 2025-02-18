@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Confirm Box Example</title>
+    <script>
+        function showConfirmBox() {
+            var age = document.getElementById("age").value;
+            if (age >= 18) {
+                var result = confirm("Are you sure you are above 18?");
+                if (result == true) {
+                    window.location.href = "login.html";
+                } else {
+                    alert("You are not eligible to Login");
+                }
+            } else {
+                alert("You are not eligible to Login");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="display: flex; flex-direction: row; align-items: center; margin-top: 100px;justify-content: center;gap: 5px;">
+    <h4>Enter Your Age:</h4>
+    <input type="text" id="age" value="">
+    <button onclick="showConfirmBox()">Click Here</button>
+</div>
+</body>
+</html>

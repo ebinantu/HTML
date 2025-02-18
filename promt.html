@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prompt Box</title>
+    </head>
+ <body style="background-color: rgb(47, 47, 49);">
+    <section style="text-align: center;margin-top:20%;"><h1 id="welcome" style="color: aliceblue;"></h1></section>
+    <script>
+        var name = prompt("Enter your name:");
+        if (name == null || name == "") {
+            name = "Sir/Madam";
+            } 
+        else{
+            name = name;
+        }
+        document.getElementById("welcome").innerHTML = "Hello " + name + ", welcome to our website";
+    </script>
+    </body>
+</html>
